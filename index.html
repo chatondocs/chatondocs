@@ -547,16 +547,16 @@ ChatOnDocs makes it <span class="keyword">easy</span> to create beautiful docume
       var btn = document.getElementById('menuBtn');
       var overlay = document.getElementById('overlay');
       var panel = document.getElementById('mobSidebar');
-      var close = document.getElementById('mobClose');
+      var closeBtn = document.getElementById('mobClose');
 
-      function open() { panel.classList.add('open'); overlay.classList.add('open'); document.body.style.overflow = 'hidden'; }
-      function close() { panel.classList.remove('open'); overlay.classList.remove('open'); document.body.style.overflow = ''; }
+      function openMenu() { panel.classList.add('open'); overlay.classList.add('open'); document.body.style.overflow = 'hidden'; }
+      function closeMenu() { panel.classList.remove('open'); overlay.classList.remove('open'); document.body.style.overflow = ''; }
 
-      btn.addEventListener('click', open);
-      close.addEventListener('click', close);
-      overlay.addEventListener('click', close);
-      document.addEventListener('keydown', function(e) { if (e.key === 'Escape') close(); });
-      panel.querySelectorAll('a').forEach(function(a) { a.addEventListener('click', close); });
+      btn.addEventListener('click', openMenu);
+      closeBtn.addEventListener('click', closeMenu);
+      overlay.addEventListener('click', closeMenu);
+      document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeMenu(); });
+      panel.querySelectorAll('a').forEach(function(a) { a.addEventListener('click', closeMenu); });
     })();
   </script>
 </body>
